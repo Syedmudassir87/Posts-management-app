@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
-const PORT = 8080;
+require("dotenv").config();
+const PORT = process.env.PORT || 8080;
 const path = require("path");
 const { v4 : uuidv4 } = require('uuid');
 const methodOverride = require("method-override");
@@ -48,8 +49,10 @@ app.get("/posts/:id",(req,res)=>{
 
 app.patch("/posts/:id",(req,res)=>{
   let {id} = req.params ;
-  contentNew = req.body.content ;
+  let contentNew = req.body.content ;
   let post = posts.find((p)=> id === p.id);
+  if(!post) return
+  res.status(404).send("Post not found");
   post.content = contentNew ;
   res.redirect("/posts");
 });
