@@ -1,4 +1,4 @@
-Node.js Posts Management App
+# Node.js Posts Management App
 
 A beginner-friendly web application built using Node.js, Express.js, and EJS to create, view, edit, and delete posts.
 
