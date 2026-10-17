@@ -2,11 +2,11 @@
 
 A beginner-friendly web application built using Node.js, Express.js, and EJS to create, view, edit, and delete posts.
 
-About the Project
+## About the Project
 
 This project is a simple posts management application that demonstrates the basic CRUD operations in web development. Users can create new posts, view post details, edit existing post content, and delete posts through a web interface.
 
-Features
+## Features
 
 - View Posts: Display all available posts on the home page.
 - Create Posts: Add new posts with a username and content.
@@ -16,7 +16,7 @@ Features
 - Express Routing: Handle requests for creating, viewing, editing, updating, and deleting posts.
 - EJS Templates: Render dynamic pages using server-side templates.
 
-Tech Stack
+## Tech Stack
 
 - Node.js — JavaScript runtime
 - Express.js — Server and routing
@@ -25,7 +25,7 @@ Tech Stack
 - JavaScript — Application logic
 - Git and GitHub — Version control and source code management
 
-Project Structure
+## Project Structure
 
 - "index.js" — Main application and routes
 - "views/index.ejs" — Displays the list of posts
@@ -34,13 +34,13 @@ Project Structure
 - "views/edit.ejs" — Form to edit a post
 - "public/" — Static assets, if used
 
-How It Works
+## How It Works
 
 The application uses Express routes to handle user actions. EJS templates display post information and provide forms for creating, editing, and deleting posts. The application currently manages post data using a JavaScript array rather than a database.
 
 Note: Since posts are stored in memory, the data may reset when the server restarts.
 
-What I Learned
+## What I Learned
 
 - Creating routes with Express.js
 - Rendering dynamic pages using EJS
