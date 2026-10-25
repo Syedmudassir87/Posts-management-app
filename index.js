@@ -51,8 +51,9 @@ app.patch("/posts/:id",(req,res)=>{
   let {id} = req.params ;
   let contentNew = req.body.content ;
   let post = posts.find((p)=> id === p.id);
-  if(!post) return
-  res.status(404).send("Post not found");
+  if(!post) {
+ return res.status(404).send("Post not found")
+  };
   post.content = contentNew ;
   res.redirect("/posts");
 });
@@ -60,7 +61,23 @@ app.patch("/posts/:id",(req,res)=>{
 app.get("/posts/:id/edit",(req,res)=>{
   let {id} = req.params ;
   let post = posts.find((p)=> id === p.id);
+  if(!post) {
+ return res.status(404).send("Post not found")
+  };
   res.render("edit.ejs",{ post });
+});
+
+app.post("/posts/:id/delete",(req,res)=>{
+  try{
+  const {id} = req.params;
+  posts=posts.filter((p)=>{
+    return p.id !=id;
+  })
+  res.redirect("/posts");
+  }catch(err){
+    console.log(err);
+    req.status(500).send("Error deleting post");
+  }
 });
 
 app.listen(PORT, () => {
